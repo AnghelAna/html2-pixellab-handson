@@ -7,18 +7,19 @@ body {
   margin: 0;
 }
 
-@keyframes blink {
+@keyframes recolor {
   to {
-    opacity: 1;
+    color: black;
   }
   from {
-    opacity: 0;
+    color: white;
   }
 }
+
 .loader {
   text-transform: uppercase;
   font-family: sans-serif;
-  animation: blink 1s linear infinite alternate forwards;
+  animation: recolor 1s linear infinite alternate forwards;
 }
 
 @keyframes bounce {
@@ -50,4 +51,35 @@ body {
 
 .loader-dots .box:nth-child(3) {
   animation-delay: 0.8s;
+}
+
+.loader-dots-second {
+  display: flex;
+  gap: 8px;
+}
+
+.loader-dots-second .box {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-color: brown;
+  border-radius: 50%;
+  animation: second-bounce 0.8s linear infinite alternate forwards;
+}
+
+.loader-dots-second .box:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.loader-dots-second .box:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes second-bounce {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-16px);
+  }
 }
